@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+#gameTable {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+}
+
+.block {
+  width: 200px;
+  height: 200px;
+  outline: 1px solid black;
+}
+
+p {
+  font-size: 178px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+}
+
+button {
+  font-size: xx-large;
+  padding: 10px;
+  border: 1px solid black;
+  position: absolute;
+  top: 0%;
+  margin-top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
