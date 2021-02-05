@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Anonymous Pro";
 }
 
 body {
@@ -28,6 +32,23 @@ p {
   width: fit-content;
   height: fit-content;
   margin: auto;
+}
+.wins {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wins p {
+  font-size: 40px;
+  margin: 0;
+}
+
+.wins #xWins {
 }
 
 button {

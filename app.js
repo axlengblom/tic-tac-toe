@@ -1,14 +1,18 @@
 let turn = 1;
 let win = false;
+let xWins = 0;
+let oWins = 0;
 winnerSymbol = "";
 
-for (let i = 1; i < 10; i++) {
-  document
-    .getElementById("gameTable")
-    .insertAdjacentHTML(
-      "beforeend",
-      `<div id='block${i}' class='block' onclick='gameFunction(this.id)'></div>`
-    );
+function createGameBoard() {
+  for (let i = 1; i < 10; i++) {
+    document
+      .getElementById("gameTable")
+      .insertAdjacentHTML(
+        "beforeend",
+        `<div id='block${i}' class='block' onclick='gameFunction(this.id)'></div>`
+      );
+  }
 }
 
 function isOdd(num) {
@@ -24,23 +28,43 @@ function gameFunction(id) {
       // console.log(true);
       // console.log(id);
       selectedBlock.insertAdjacentHTML("beforeend", "<p>O</p>");
+      turn++;
     } else {
       // console.log(false);
       // console.log(id);
       selectedBlock.insertAdjacentHTML("beforeend", "<p>X</p>");
+      turn++;
     }
   }
-  turn++;
+
   checkForThree();
   if (win == true) {
     document.getElementById(
       "gameTable"
     ).innerHTML = `<div class = 'win'><p>${winnerSymbol} Wins</p></div>`;
+    if (winnerSymbol == "X") {
+      xWins++;
+      console.log("X wins: " + xWins);
+      document.getElementById("xWins").innerHTML = xWins;
+    } else if (winnerSymbol == "O") {
+      oWins++;
+      console.log("O wins: " + oWins);
+      document.getElementById("oWins").innerHTML = oWins;
+    }
   }
 }
 
 function reset() {
-  location.reload();
+  let blocks = document.querySelectorAll(".block");
+  blocks.forEach((block) => {
+    block.innerHTML = "";
+  });
+  turn = 1;
+  if (document.getElementById("gameTable").innerHTML != "") {
+    document.getElementById("gameTable").innerHTML = "";
+    win = false;
+    createGameBoard();
+  }
 }
 
 function checkForThree() {
@@ -107,7 +131,9 @@ function checkForThree() {
 function getInsides(block) {
   let winner = JSON.stringify(document.getElementById(block).innerHTML);
   winnerSymbol = winner.charAt(4);
-  console.log(winnerSymbol);
+  // console.log(winnerSymbol);
   win = true;
   return winnerSymbol;
 }
+
+createGameBoard();
