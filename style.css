@@ -78,6 +78,10 @@ button {
     top: 55%;
   }
 
+  button {
+    font-size: large;
+  }
+
   .block {
     width: 100px;
     height: 100px;
