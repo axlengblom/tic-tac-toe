@@ -4,6 +4,9 @@ let xWins = 0;
 let oWins = 0;
 winnerSymbol = "";
 
+document.getElementById("xWins").innerHTML = xWins;
+document.getElementById("oWins").innerHTML = oWins;
+
 function createGameBoard() {
   for (let i = 1; i < 10; i++) {
     document
