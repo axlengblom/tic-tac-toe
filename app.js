@@ -38,13 +38,14 @@ function gameFunction(id) {
       selectedBlock.insertAdjacentHTML("beforeend", "<p>X</p>");
       turn++;
     }
+    console.log(turn);
   }
 
   checkForThree();
   if (win == true) {
     document.getElementById(
       "gameTable"
-    ).innerHTML = `<div class = 'win'><p>${winnerSymbol} Wins</p></div>`;
+    ).innerHTML = `<div class = 'win'><p>${winnerSymbol} Wins!</p></div>`;
     if (winnerSymbol == "X") {
       xWins++;
       console.log("X wins: " + xWins);
@@ -54,6 +55,10 @@ function gameFunction(id) {
       console.log("O wins: " + oWins);
       document.getElementById("oWins").innerHTML = oWins;
     }
+  } else if (turn == 10 && win == false) {
+    document.getElementById(
+      "gameTable"
+    ).innerHTML = `<div class = 'tie'><p>Tie!</p></div>`;
   }
 }
 

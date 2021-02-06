@@ -48,9 +48,6 @@ p {
   margin: 0;
 }
 
-.wins #xWins {
-}
-
 button {
   font-size: xx-large;
   padding: 10px;
@@ -60,4 +57,13 @@ button {
   margin-top: 15px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.win p {
+  width: max-content;
+  margin: auto;
+}
+.tie {
+  width: min-content;
+  margin: auto;
 }
