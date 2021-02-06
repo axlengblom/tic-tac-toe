@@ -144,4 +144,11 @@ function getInsides(block) {
   return winnerSymbol;
 }
 
+function resetScore() {
+  xWins = 0;
+  oWins = 0;
+  document.getElementById("xWins").innerHTML = xWins;
+  document.getElementById("oWins").innerHTML = oWins;
+}
+
 createGameBoard();

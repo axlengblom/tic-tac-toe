@@ -50,11 +50,11 @@ p {
 
 button {
   font-size: xx-large;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid black;
   position: absolute;
   top: 0%;
-  margin-top: 15px;
+  margin-top: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -66,4 +66,45 @@ button {
 .tie {
   width: min-content;
   margin: auto;
+}
+
+#resetScoreBtn {
+  margin-top: 65px;
+}
+
+@media screen and (max-width: 700px) {
+  #gameTable {
+    width: 300px;
+    top: 55%;
+  }
+
+  .block {
+    width: 100px;
+    height: 100px;
+  }
+
+  p {
+    font-size: 89px;
+    margin: auto;
+  }
+
+  .wins {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wins p {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .win p {
+    font-size: 70px;
+    width: auto;
+  }
 }
